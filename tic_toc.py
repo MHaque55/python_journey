@@ -1,4 +1,4 @@
-map = [['0:0', '0:1', '0:2'], 
+mat = [['0:0', '0:1', '0:2'], 
         ['1:0', '1:1', '1:2'], 
         ['2:0', '2:1', '2:2']]
 
@@ -8,68 +8,68 @@ p2 = input('Player2, enter your name: ')
 print(p1 + ' is \'O\'' + ' and ' + p2 + ' is \'X\'')
 print('Nope you don\'t have any choice')
 
-def display(dis_map):        
-    for i in dis_map:
+def display(dis_mat):        
+    for i in dis_mat:
         for j in i:
             print(j, end = '     ')
         print()
 
 
-def result(map, p1, p2):
+def result(mat, p1, p2):
     #Horizontal
-    if(map[0][0] == map[1][0]) & (map[1][0] == map[2][0]):
-        if(map[0][0]) == 'O':
+    if(mat[0][0] == mat[1][0]) & (mat[1][0] == mat[2][0]):
+        if(mat[0][0]) == 'O':
             print(p1 + ' won')
         else:
             print(p2 + ' won')
         return True
 
-    elif(map[0][1] == map[1][1]) & (map[1][1] == map[2][1]):
-        if(map[0][1]) == 'O':
+    elif(mat[0][1] == mat[1][1]) & (mat[1][1] == mat[2][1]):
+        if(mat[0][1]) == 'O':
             print(p1 + ' won')
         else:
             print(p2 + ' won')
         return True
     
-    elif(map[2][0] == map[2][1]) & (map[2][1] == map[2][2]):
-        if(map[2][0]) == 'O':
+    elif(mat[2][0] == mat[2][1]) & (mat[2][1] == mat[2][2]):
+        if(mat[2][0]) == 'O':
             print(p1 + ' won')
         else:
             print(p2 + ' won')
         return True
 
     #Vertical
-    elif(map[0][0] == map[0][1]) & (map[0][1] == map[0][2]):
-        if(map[0][0]) == 'O':
+    elif(mat[0][0] == mat[0][1]) & (mat[0][1] == mat[0][2]):
+        if(mat[0][0]) == 'O':
             print(p1 + ' won')
         else:
             print(p2 + ' won')
         return True
 
-    elif(map[1][0] == map[1][1]) & (map[1][1] == map[1][2]):
-        if(map[1][0]) == 'O':
+    elif(mat[1][0] == mat[1][1]) & (mat[1][1] == mat[1][2]):
+        if(mat[1][0]) == 'O':
             print(p1 + ' won')
         else:
             print(p2 + ' won')
         return True
     
-    elif(map[2][0] == map[2][1]) & (map[2][1] == map[2][2]):
-        if(map[2][0]) == 'O':
+    elif(mat[2][0] == mat[2][1]) & (mat[2][1] == mat[2][2]):
+        if(mat[2][0]) == 'O':
             print(p1 + ' won')
         else:
             print(p2 + ' won')
         return True
     
     #Diagonal
-    elif(map[0][0] == map[1][1]) & (map[1][1] == map[2][2]):
-        if(map[0][0]) == 'O':
+    elif(mat[0][0] == mat[1][1]) & (mat[1][1] == mat[2][2]):
+        if(mat[0][0]) == 'O':
             print(p1 + ' won')
         else:
             print(p2 + ' won')
         return True
 
-    elif(map[0][2] == map[1][1]) & (map[1][1] == map[2][0]):
-        if(map[0][2]) == 'O':
+    elif(mat[0][2] == mat[1][1]) & (mat[1][1] == mat[2][0]):
+        if(mat[0][2]) == 'O':
             print(p1 + ' won')
         else:
             print(p2 + ' won')
@@ -77,7 +77,7 @@ def result(map, p1, p2):
 
 
     else:
-        for i in map:
+        for i in mat:
             for j in i:
                 if (j == 'X') | (j == '0'):
                     continue
@@ -94,11 +94,11 @@ def is_valid(row, col):
     else:
         return True
 
-def game(map, p1, p2):
-    print('See the map below')
-    display(map)
+def game(mat, p1, p2):
+    print('See the mat below')
+    display(mat)
     print('row : column')
-    while result(map, p1, p2) != True:
+    while result(mat, p1, p2) != True:
         print(p1 + ', your turn.')
         in_row = input('Enter your row (left one) number: ')
         in_col = input('Enter your column (right one) number: ')
@@ -109,8 +109,8 @@ def game(map, p1, p2):
             in_col = input('Enter your column (right one) number: ')
             row = int(in_row)
             col = int(in_col)
-        map[row][col] = 'O'
-        display(map)
+        mat[row][col] = 'O'
+        display(mat)
         print(p2 + ', your turn.')
         in_row = input('Enter your row (left one) number: ')
         in_col = input('Enter your column (right one) number: ')
@@ -121,11 +121,11 @@ def game(map, p1, p2):
             in_col = input('Enter your column (right one) number: ')
             row = int(in_row)
             col = int(in_col)
-        map[row][col] = 'X'
-        display(map)
+        mat[row][col] = 'X'
+        display(mat)
     return True
 
-game(map, p1, p2)
+game(mat, p1, p2)
 
 
 
