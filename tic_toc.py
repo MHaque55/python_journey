@@ -17,21 +17,21 @@ def display(dis_mat):
 
 def result(mat, p1, p2):
     #Horizontal
-    if(mat[0][0] == mat[1][0]) & (mat[1][0] == mat[2][0]):
+    if(mat[0][0] == mat[1][0]) and (mat[1][0] == mat[2][0]):
         if(mat[0][0]) == 'O':
             print(p1 + ' won')
         else:
             print(p2 + ' won')
         return True
 
-    elif(mat[0][1] == mat[1][1]) & (mat[1][1] == mat[2][1]):
+    elif(mat[0][1] == mat[1][1]) and (mat[1][1] == mat[2][1]):
         if(mat[0][1]) == 'O':
             print(p1 + ' won')
         else:
             print(p2 + ' won')
         return True
     
-    elif(mat[2][0] == mat[2][1]) & (mat[2][1] == mat[2][2]):
+    elif(mat[2][0] == mat[2][1]) and (mat[2][1] == mat[2][2]):
         if(mat[2][0]) == 'O':
             print(p1 + ' won')
         else:
@@ -39,21 +39,21 @@ def result(mat, p1, p2):
         return True
 
     #Vertical
-    elif(mat[0][0] == mat[0][1]) & (mat[0][1] == mat[0][2]):
+    elif(mat[0][0] == mat[0][1]) and (mat[0][1] == mat[0][2]):
         if(mat[0][0]) == 'O':
             print(p1 + ' won')
         else:
             print(p2 + ' won')
         return True
 
-    elif(mat[1][0] == mat[1][1]) & (mat[1][1] == mat[1][2]):
+    elif(mat[1][0] == mat[1][1]) and (mat[1][1] == mat[1][2]):
         if(mat[1][0]) == 'O':
             print(p1 + ' won')
         else:
             print(p2 + ' won')
         return True
     
-    elif(mat[2][0] == mat[2][1]) & (mat[2][1] == mat[2][2]):
+    elif(mat[2][0] == mat[2][1]) and (mat[2][1] == mat[2][2]):
         if(mat[2][0]) == 'O':
             print(p1 + ' won')
         else:
@@ -61,14 +61,14 @@ def result(mat, p1, p2):
         return True
     
     #Diagonal
-    elif(mat[0][0] == mat[1][1]) & (mat[1][1] == mat[2][2]):
+    elif(mat[0][0] == mat[1][1]) and (mat[1][1] == mat[2][2]):
         if(mat[0][0]) == 'O':
             print(p1 + ' won')
         else:
             print(p2 + ' won')
         return True
 
-    elif(mat[0][2] == mat[1][1]) & (mat[1][1] == mat[2][0]):
+    elif(mat[0][2] == mat[1][1]) and (mat[1][1] == mat[2][0]):
         if(mat[0][2]) == 'O':
             print(p1 + ' won')
         else:
@@ -87,11 +87,14 @@ def result(mat, p1, p2):
     print('Draw oh oh')
     return True
 
-def is_valid(row, col):
+def is_valid(mat, row, col):
     if(row < 0 or row > 2) or (col < 0 or col > 2):
         print('Invalid argument, try again')
         return False
     else:
+        if mat[row][col] == 'X' or mat[row][col] == 'O':
+            print('Invalid argument, place already chosen, try again')
+            return False
         return True
 
 def game(mat, p1, p2):
@@ -104,7 +107,7 @@ def game(mat, p1, p2):
         in_col = input('Enter your column (right one) number: ')
         row = int(in_row)
         col = int(in_col)
-        while is_valid(row, col) == False:
+        while is_valid(mat, row, col) == False:
             in_row = input('Enter your row (left one) number: ')
             in_col = input('Enter your column (right one) number: ')
             row = int(in_row)
