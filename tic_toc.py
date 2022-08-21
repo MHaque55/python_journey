@@ -119,7 +119,7 @@ def game(mat, p1, p2):
         in_col = input('Enter your column (right one) number: ')
         row = int(in_row)
         col = int(in_col)
-        while is_valid(row, col) == False:
+        while is_valid(mat, row, col) == False:
             in_row = input('Enter your row (left one) number: ')
             in_col = input('Enter your column (right one) number: ')
             row = int(in_row)
