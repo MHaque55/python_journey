@@ -71,7 +71,7 @@ def result(mat, p1, p2):
     else:
         for i in mat:
             for j in i:
-                if j == 'X' or j == '0':
+                if j == 'X' or j == 'O':
                     continue
                 else:
                     return False
