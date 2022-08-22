@@ -12,7 +12,10 @@ print('Nope you don\'t have any choice')
 def display(dis_mat):
     for i in dis_mat:
         for j in i:
-            print(j, end='     ')
+            if j == 'O' or j == 'X':
+                print(j.center(3), end=' ')
+            else:
+                print(j, end=' ')
         print()
 
 
