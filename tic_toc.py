@@ -20,7 +20,7 @@ def display(dis_mat):
 
 
 def result(mat, p1, p2):
-    # Horizontal
+    # Verical
     if mat[0][0] == mat[1][0] and mat[1][0] == mat[2][0]:
         if mat[0][0] == 'O':
             print(p1 + ' won')
@@ -39,7 +39,7 @@ def result(mat, p1, p2):
         else:
             print(p2 + ' won')
         return True
-    # Vertical
+    # Horizontal
     elif mat[0][0] == mat[0][1] and mat[0][1] == mat[0][2]:
         if mat[0][0] == 'O':
             print(p1 + ' won')
@@ -110,6 +110,8 @@ def game(mat, p1, p2):
             col = int(in_col)
         mat[row][col] = 'O'
         display(mat)
+        if result(mat, p1, p2):
+            break
         print(p2 + ', your turn.')
         in_row = input('Enter your row (left one) number: ')
         in_col = input('Enter your column (right one) number: ')
