@@ -90,11 +90,53 @@ def result(mat, p1, p2):
 
 
 def is_valid(mat, input):
-    if input == 'TL' or input == 'TM' or input == 'TR' or \
-        input == 'ML' or input == 'MM' or input == 'MR' or \
-            input == 'BL' or input == 'BM' or input == 'BR':
+    if input == 'TL':
+        if mat[0][0] != ' ':
+            print('Already used, try a different place')
+            return False
+        return True
+    elif input == 'TM':
+        if mat[0][2] != ' ':
+            print('Already used, try a different place')
+            return False
+        return True
+    elif input == 'TR':
+        if mat[0][4] != ' ':
+            print('Already used, try a different place')
+            return False
+        return True
+    elif input == 'ML':
+        if mat[2][0] != ' ':
+            print('Already used, try a different place')
+            return False
+        return True
+    elif input == 'MM':
+        if mat[2][2] != ' ':
+            print('Already used, try a different place')
+            return False
+        return True
+    elif input == 'MR':
+        if mat[2][4] != ' ':
+            print('Already used, try a different place')
+            return False
+        return True
+    elif input == 'BL':
+        if mat[4][0] != ' ':
+            print('Already used, try a different place')
+            return False
+        return True
+    elif input == 'BM':
+        if mat[4][2] != ' ':
+            print('Already used, try a different place')
+            return False
+        return True
+    elif input == 'BR':
+        if mat[4][4] != ' ':
+            print('Already used, try a different place')
+            return False
         return True
     else:
+        print('Invalid input, try again')
         return False
 
 
@@ -118,7 +160,7 @@ def placement(mat, mark, input):
         mat[2][4] = mark
     elif input == 'BL':
         mat[4][0] = mark
-    elif input == 'BL':
+    elif input == 'BM':
         mat[4][2] = mark
     elif input == 'BR':
         mat[4][4] = mark
