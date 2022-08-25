@@ -20,51 +20,59 @@ def display(dis_mat):
 
 def result(mat, p1, p2):
     # Verical
-    if mat[0][0] == mat[2][0] and mat[2][0] == mat[4][0] and mat[0][0] != ' ':
+    if mat[0][0] == mat[2][0] and mat[2][0] == mat[4][0] \
+       and mat[0][0] != ' ':
         if mat[0][0] == 'O':
             print(p1 + ' won')
         else:
             print(p2 + ' won')
         return True
-    elif mat[0][2] == mat[2][2] and mat[2][2] == mat[4][2] and mat[0][2] != ' ':
+    elif mat[0][2] == mat[2][2] and mat[2][2] == mat[4][2] \
+            and mat[0][2] != ' ':
         if mat[0][2] == 'O':
             print(p1 + ' won')
         else:
             print(p2 + ' won')
         return True
-    elif mat[0][4] == mat[2][4] and mat[2][4] == mat[4][4] and mat[0][4] != ' ':
+    elif mat[0][4] == mat[2][4] and mat[2][4] == mat[4][4] \
+            and mat[0][4] != ' ':
         if mat[0][4] == 'O':
             print(p1 + ' won')
         else:
             print(p2 + ' won')
         return True
     # Horizontal
-    elif mat[0][0] == mat[0][2] and mat[0][2] == mat[0][4] and mat[0][0] != ' ':
+    elif mat[0][0] == mat[0][2] and mat[0][2] == mat[0][4] \
+            and mat[0][0] != ' ':
         if mat[0][0] == 'O':
             print(p1 + ' won')
         else:
             print(p2 + ' won')
         return True
-    elif mat[2][0] == mat[2][2] and mat[2][2] == mat[2][4] and mat[2][0] != ' ':
+    elif mat[2][0] == mat[2][2] and mat[2][2] == mat[2][4] \
+            and mat[2][0] != ' ':
         if mat[2][0] == 'O':
             print(p1 + ' won')
         else:
             print(p2 + ' won')
         return True
-    elif mat[4][0] == mat[4][2] and mat[4][2] == mat[4][4] and mat[4][0] != ' ':
+    elif mat[4][0] == mat[4][2] and mat[4][2] == mat[4][4] \
+            and mat[4][0] != ' ':
         if mat[4][0] == 'O':
             print(p1 + ' won')
         else:
             print(p2 + ' won')
         return True
     # Diagonal
-    elif mat[0][0] == mat[2][2] and mat[2][2] == mat[4][4] and mat[0][0] != ' ':
+    elif mat[0][0] == mat[2][2] and mat[2][2] == mat[4][4] \
+            and mat[0][0] != ' ':
         if mat[0][0] == 'O':
             print(p1 + ' won')
         else:
             print(p2 + ' won')
         return True
-    elif mat[0][4] == mat[2][2] and mat[2][2] == mat[4][0] and mat[0][4] != ' ':
+    elif mat[0][4] == mat[2][2] and mat[2][2] == mat[4][0] \
+            and mat[0][4] != ' ':
         if mat[0][4] == 'O':
             print(p1 + ' won')
         else:
