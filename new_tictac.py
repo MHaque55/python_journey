@@ -1,12 +1,8 @@
-mat = [['00', '|', '02', '|', '04'],
+mat = [[' ', '|', ' ', '|', ' '],
        ['-', '+', '-', '+', '-'],
-       ['20', '|', '22', '|', '24'],
+       [' ', '|', ' ', '|', ' '],
        ['-', '+', '-', '+', '-'],
-       ['40', '|', '42', '|', '44']]
-for i in mat:
-    for j in i:
-        print(j, end='')
-    print()
+       [' ', '|', ' ', '|', ' ']]
 
 p1 = input('Player1, enter your name: ')
 p2 = input('Player2, enter your name: ')
@@ -124,18 +120,20 @@ def placement(mat, mark, input):
 
 def game(mat, p1, p2):
     print('See the board below')
+    print()
     display(mat)
-    print('Input -> \"TL\" for top-left, \"TM\" for top-middle, \
-         \"TR\" for top-right,\n \"ML\" for middle-left, \
-          \"MM\" for the center, \
-         \"ML\" for middle-left,\n \"BL\" for bottome-left, \
-         \"BM\" for bottom-middle, \"BR\" for bottom-right')
+    print()
+    print('This is how you put your input')
+    print('Top-Left == \"TL\", Top-Middle = \"TM\", Top-Right = \"TR\"')
+    print('Middle-Left = \"ML\", Center = \"MM\", Middle-Right = \"MR\"')
+    print('Bottom-Left = \"BL\", Bottom-Mid = \"BM\", Bottom-Right = \"BR\"')
+    print()
     while not result(mat, p1, p2):
         print(p1 + ', your turn.')
         input = get_input()
         while not is_valid(mat, input):
             input = get_input()
-        mat[row][col] = 'O'
+        placement(mat, 'O', input)
         display(mat)
         if result(mat, p1, p2):
             break
@@ -143,8 +141,9 @@ def game(mat, p1, p2):
         input = get_input()
         while not is_valid(mat, input):
             input = get_input()
-        mat[row][col] = 'X'
+        placement(mat, 'X', input)
         display(mat)
     return True
+
 
 game(mat, p1, p2)
