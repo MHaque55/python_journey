@@ -92,12 +92,34 @@ def is_valid(mat, input):
         print('Wrong input, try again')
         return False
     else:
+        
         return True
 
 
 def get_input():
     place = input('Where do you want to put your mark? ')
     return place
+
+
+def placement(mat, mark, input):
+    if input == 'TL':
+        mat[0][0] = mark
+    elif input == 'TM':
+        mat[0][2] = mark
+    elif input == 'TL':
+        mat[0][4] = mark
+    elif input == 'ML':
+        mat[2][0] = mark
+    elif input == 'MM':
+        mat[2][2] = mark
+    elif input == 'MR':
+        mat[2][4] = mark
+    elif input == 'BL':
+        mat[4][0] = mark
+    elif input == 'BL':
+        mat[4][2] = mark
+    elif input == 'BR':
+        mat[4][4] = mark
 
 
 def game(mat, p1, p2):
