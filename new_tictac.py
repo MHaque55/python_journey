@@ -89,37 +89,38 @@ def is_valid(mat, input):
     if input != 'TL' or input != 'TM' or input != 'TR' or \
         input != 'ML' or input != 'MM' or input != 'MR' or \
             input != 'BL' or input != 'BM' or input != 'BR':
+        print('Wrong input, try again')
         return False
     else:
         return True
 
 
+def get_input():
+    place = input('Where do you want to put your mark? ')
+    return place
+
+
 def game(mat, p1, p2):
     print('See the board below')
     display(mat)
-    print('So you have to put \"TL\" for top-left, \"TM\" for top-middle, \"TR\" for top-right, "')
+    print('Input -> \"TL\" for top-left, \"TM\" for top-middle, \
+         \"TR\" for top-right,\n \"ML\" for middle-left, \
+          \"MM\" for the center, \
+         \"ML\" for middle-left,\n \"BL\" for bottome-left, \
+         \"BM\" for bottom-middle, \"BR\" for bottom-right')
     while not result(mat, p1, p2):
         print(p1 + ', your turn.')
-        
-        while not is_valid(mat, row, col):
-            in_row = input('Enter your row (left one) number: ')
-            in_col = input('Enter your column (right one) number: ')
-            row = int(in_row)
-            col = int(in_col)
+        input = get_input()
+        while not is_valid(mat, input):
+            input = get_input()
         mat[row][col] = 'O'
         display(mat)
         if result(mat, p1, p2):
             break
         print(p2 + ', your turn.')
-        in_row = input('Enter your row (left one) number: ')
-        in_col = input('Enter your column (right one) number: ')
-        row = int(in_row)
-        col = int(in_col)
-        while not is_valid(mat, row, col):
-            in_row = input('Enter your row (left one) number: ')
-            in_col = input('Enter your column (right one) number: ')
-            row = int(in_row)
-            col = int(in_col)
+        input = get_input()
+        while not is_valid(mat, input):
+            input = get_input()
         mat[row][col] = 'X'
         display(mat)
     return True
