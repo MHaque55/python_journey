@@ -77,56 +77,18 @@ def result(mat, p1, p2):
     else:
         for i in mat:
             for j in i:
-                if j == 'X' or j == 'O':
-                    continue
-                else:
-                    return False
+                # if j == 'X' or j == 'O':
+                #     continue
+                # else:
+                #     return False
     print('Draw oh oh')
     return True
 
 
-def is_valid(mat, row, col):
-    if (row < 0 or row > 2) or (col < 0 or col > 2):
-        print('Invalid argument, try again')
-        return False
-    else:
-        if mat[row][col] == 'X' or mat[row][col] == 'O':
-            print('Invalid argument, place already chosen, try again')
-            return False
-        return True
+# def is_valid(mat, row, col)
 
 
 def game(mat, p1, p2):
-    print('See the mat below')
-    display(mat)
-    print('row : column')
-    while not result(mat, p1, p2):
-        print(p1 + ', your turn.')
-        in_row = input('Enter your row (left one) number: ')
-        in_col = input('Enter your column (right one) number: ')
-        row = int(in_row)
-        col = int(in_col)
-        while not is_valid(mat, row, col):
-            in_row = input('Enter your row (left one) number: ')
-            in_col = input('Enter your column (right one) number: ')
-            row = int(in_row)
-            col = int(in_col)
-        mat[row][col] = 'O'
-        display(mat)
-        if result(mat, p1, p2):
-            break
-        print(p2 + ', your turn.')
-        in_row = input('Enter your row (left one) number: ')
-        in_col = input('Enter your column (right one) number: ')
-        row = int(in_row)
-        col = int(in_col)
-        while not is_valid(mat, row, col):
-            in_row = input('Enter your row (left one) number: ')
-            in_col = input('Enter your column (right one) number: ')
-            row = int(in_row)
-            col = int(in_col)
-        mat[row][col] = 'X'
-        display(mat)
     return True
 
 
