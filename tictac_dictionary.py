@@ -1,5 +1,15 @@
-student = {'Name': 'Horge', 'Age': 55, 'Job': 'Outside'}
-print(student['Name'])
-student['Name'] = 'Not Horge'
-print(student['Name'])
-print(student.values())
+d = {
+    'TL': (0, 0),
+    'TM': (0, 1),
+    'TR': (0, 2),
+    'ML': (1, 0),
+    'MM': (1, 1),
+    'MR': (1, 2),
+    'BL': (2, 0),
+    'BM': (2, 1),
+    'BR': (2, 2)
+}
+mat = [[' ', ' ', ' '],
+       [' ', ' ', ' '],
+       [' ', ' ', ' ']]
+print(d['BL'])
