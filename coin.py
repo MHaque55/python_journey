@@ -1,4 +1,11 @@
 amount = input('How much (In cents)? ')
-q = int(amount) / 25
-
-print('Quarters: ' + int(q))
+quarter = int(amount) / 25
+rem = int(amount) % 25
+dime = rem / 10
+rem = rem % 10
+nickel = rem / 5
+penny = rem % 5
+print('Quarters:', int(quarter))
+print('Dime:', int(dime))
+print('Nickel:', int(nickel))
+print('Penny:', penny)
