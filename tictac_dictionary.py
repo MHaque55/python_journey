@@ -99,6 +99,11 @@ def result(mat, p1, p2):
     print('Draw oh oh')
     return True
 
+def is_valid(choice, x, y):
+    if choice != 'Tl' and choice != 'TM' and choice != 'TR' and \
+    choice != 'ML' and choice != 'MM' and choice != 'MR' and \
+    choice != 'BL' and choice != 'BM' and choice != 'BR':
+        
 
 def game(pos, mat, p1, p2):
     print('TL, TM, TR, ML, MM, MR, BL, BM, BR')
@@ -109,7 +114,8 @@ def game(pos, mat, p1, p2):
         print(p1 + ', your turn')
         choice = input('Choose place:')
         x, y = pos[choice]
-        while not is_valid(x, y):
-             
+        while not is_valid(choice, x, y):
+            
+
     
 
